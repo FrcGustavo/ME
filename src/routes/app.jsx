@@ -4,7 +4,7 @@ import * as firebase from 'firebase/app';
 import { firebaseConfig } from '../config';
 
 import Main from '../modules/Main';
-import Admin from '../modules/Admin';
+import Admin from '../modules/Admin/Admin';
 
 import '../assets/styles/app.scss';
 
