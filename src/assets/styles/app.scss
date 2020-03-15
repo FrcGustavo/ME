@@ -1,0 +1,39 @@
+:root {
+    --primary: #2196f3;
+    --primary-light: #6ec6ff;
+    --primary-dark: #0069c0;
+    --secondary: #ff7043;
+    --secondary-light: #ffa270;
+    --secondary-dark: #c63f17;
+    --white: #FFF;
+    --black: #000;
+}
+
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: var(--white);
+}
+
+.main {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0.5rem 1rem;
+}
+
+@media screen and (min-width: 1200px) {
+    .main {
+        padding: 0.5rem 0;
+    }
+}
