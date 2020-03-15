@@ -4,6 +4,7 @@ import * as firebase from 'firebase/app';
 import { firebaseConfig } from '../config';
 
 import Main from '../modules/Main';
+import Auth from '../modules/Auth/Auth';
 import Admin from '../modules/Admin/Admin';
 
 import '../assets/styles/app.scss';
@@ -16,6 +17,11 @@ const App = () => {
     if (url === 'admin') {
       return <Admin />;
     }
+
+    if (url === 'auth') {
+      return <Auth />;
+    }
+
     return <Main /> ;
   }
 
