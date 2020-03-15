@@ -6,8 +6,8 @@ import '../assets/styles/components/Navbar.scss';
 const Navbar = () => {
   return (
     <nav className="admin-navbar navbar">
-      <Link to="/proyectos">Proyectos</Link>
-      <Link to="/blog">Blog</Link>
+      <Link to="/admin/proyectos">Proyectos</Link>
+      <Link to="/admin/blog">Blog</Link>
     </nav>
   );
 };

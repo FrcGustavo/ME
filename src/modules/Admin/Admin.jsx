@@ -4,6 +4,9 @@ import { Switch, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 
+import Projects from './containers/Projects';
+import Blog from './containers/Blog';
+
 import './assets/styles/Admin.scss';
 
 const Admin = () => (
@@ -14,9 +17,9 @@ const Admin = () => (
         <Header />
         <main>
           <Switch>
-            <Route exact path="/admin">
-              <h1>Administrador</h1>
-            </Route>
+            <Route exact path="/admin" component={Projects} />
+            <Route exact path="/admin/proyectos" component={Projects} />
+            <Route exact path="/admin/blog" component={Blog} />
           </Switch>
         </main>
       </div>
