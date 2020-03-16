@@ -5,7 +5,7 @@ import Register from './containers/Register';
 
 const Main = () => (
   <>
-    <main className="auth-main main">
+    <main className="auth-main">
       <Switch>
         <Route exact path="/auth/login" component={Register} />
         <Route exact path="/auth/register" component={Register} />

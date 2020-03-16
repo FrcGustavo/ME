@@ -1,34 +1,48 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
-//import firebase from '../../../utils/firebase';
-import {  } from 'firebase/auth';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import '../assets/styles/containers/Register.scss';
 
 const Register = () => {
-  //const firebase = fire.getFire();
-  //console.log(firebase.auth().createUserWithEmailAndPassword());
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    password: '',
+  });
 
   function handleSubmit(e) {
     e.preventDefault();
-    firebase.auth().createUserWithEmailAndPassword('hello@mail.com', '123456');
-    console.log('HOLA');
+    console.log(form);
+  }
+
+  function handleChange(e) {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
+    <form onSubmit={handleSubmit} className="auth-form form">
+      <div className="form-title">
+        <h1>Resgistrate</h1>
+      </div>
+      <div className={(form.name !== '') ? 'input-form active' : 'input-form'}>
+        <input type="text" id="name" name="name" value={form.name} onChange={handleChange} />
         <label htmlFor="name">Nombre</label>
-        <input type="text" id="name" name="name" />
       </div>
-      <div>
+      <div className={(form.email !== '') ? 'input-form active' : 'input-form'}>
+        <input type="email" id="email" name="email" value={form.email} onChange={handleChange} />
         <label htmlFor="email">email</label>
-        <input type="text" id="email" name="email" />
       </div>
-      <div>
+      <div className={(form.password !== '') ? 'input-form active' : 'input-form'}>
+        <input type="password" id="password" name="password" value={form.password} onChange={handleChange} />
         <label htmlFor="password">Contraseña</label>
-        <input type="text" id="password" name="password" />
       </div>
-      <div>
+      <div className="input-submit">
         <input type="submit" value="Registrar" />
+        <Link to="/auth/login">Iniciar Sessión</Link>
       </div>
     </form>
   );
