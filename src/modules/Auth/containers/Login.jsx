@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Register = () => {
+const Login = () => {
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -24,11 +24,7 @@ const Register = () => {
   return (
     <form onSubmit={handleSubmit} className="auth-form form">
       <div className="form-title">
-        <h1>Resgistrate</h1>
-      </div>
-      <div className={(form.name !== '') ? 'input-form active' : 'input-form'}>
-        <input type="text" id="name" name="name" value={form.name} onChange={handleChange} />
-        <label htmlFor="name">Nombre</label>
+        <h1>Iniciar Sesión</h1>
       </div>
       <div className={(form.email !== '') ? 'input-form active' : 'input-form'}>
         <input type="email" id="email" name="email" value={form.email} onChange={handleChange} />
@@ -39,11 +35,11 @@ const Register = () => {
         <label htmlFor="password">Contraseña</label>
       </div>
       <div className="input-submit">
-        <input type="submit" value="Registrar" />
-        <Link to="/auth/login">Iniciar Sessión</Link>
+        <input type="submit" value="Entarr" />
+        <Link to="/auth/register">Crear Cuenta</Link>
       </div>
     </form>
   );
 };
 
-export default Register;
+export default Login;
