@@ -2,16 +2,29 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Register = () => {
+import { createUser } from '../../../actions/firebase';
+
+const Register = (props) => {
+  console.log(props);
   const [form, setForm] = useState({
     name: '',
     email: '',
     password: '',
   });
 
+  const [message, setMessage] = useState(null);
+
   function handleSubmit(e) {
     e.preventDefault();
     console.log(form);
+    createUser(form.email, form.password)
+      .then((result) => {
+        setMessage('Te has registrado con exito! por favor verifica tu email');
+      })
+      .catch((error) => {
+        setMessage(error.message);
+        console.log(message);
+      });
   }
 
   function handleChange(e) {
@@ -26,6 +39,9 @@ const Register = () => {
       <div className="form-title">
         <h1>Resgistrate</h1>
       </div>
+      {
+        !message ? (<div>{message}</div>) : false
+      }
       <div className={(form.name !== '') ? 'input-form active' : 'input-form'}>
         <input type="text" id="name" name="name" value={form.name} onChange={handleChange} />
         <label htmlFor="name">Nombre</label>

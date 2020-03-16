@@ -49,6 +49,9 @@
         }
     }
     .input-submit {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         margin-top: 28px;
         input[type="submit"] {
             text-transform: uppercase;
@@ -58,6 +61,12 @@
             cursor: pointer;
             color: var(--white);
             background-color: var(--secondary);
+        }
+        a {
+            border-bottom: solid 1px var(--primary-dark);
+            padding: 0.5px 2px;
+            text-decoration: none;
+            color: var(--primary-dark)
         }
     }
 }

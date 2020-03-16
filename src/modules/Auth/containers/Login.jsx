@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { loginUser } from '../../../utils/firebase';
+
 const Login = () => {
   const [form, setForm] = useState({
     name: '',
@@ -12,6 +14,13 @@ const Login = () => {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(form);
+    loginUser(form.email, form.password)
+      .then((res) => {
+        window.location.href = '/admin';
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
   function handleChange(e) {
