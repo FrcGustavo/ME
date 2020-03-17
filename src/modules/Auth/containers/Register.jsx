@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 
 import { createUser } from '../../../actions/firebase';
+import Message from './Message';
 
-const Register = (props) => {
-  console.log(props);
+const Register = () => {
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -13,19 +14,18 @@ const Register = (props) => {
   });
 
   const [message, setMessage] = useState(null);
-
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    console.log(form);
-    createUser(form.email, form.password)
-      .then((result) => {
-        setMessage('Te has registrado con exito! por favor verifica tu email');
-      })
-      .catch((error) => {
-        setMessage(error.message);
-        console.log(message);
-      });
-  }
+    try {
+      const result = await createUser(form.email, form.password);
+      setMessage(result);
+      console.log(result);
+
+    } catch (error) {
+      setMessage(error.message);
+      console.log('Error', message);
+    }
+  };
 
   function handleChange(e) {
     setForm({
@@ -40,7 +40,10 @@ const Register = (props) => {
         <h1>Resgistrate</h1>
       </div>
       {
-        !message ? (<div>{message}</div>) : false
+        message ? ReactDOM.createPortal(
+          (<Message type="error">{message}</Message>),
+          document.getElementById('message-bar'),
+        ) : false
       }
       <div className={(form.name !== '') ? 'input-form active' : 'input-form'}>
         <input type="text" id="name" name="name" value={form.name} onChange={handleChange} />
@@ -48,7 +51,7 @@ const Register = (props) => {
       </div>
       <div className={(form.email !== '') ? 'input-form active' : 'input-form'}>
         <input type="email" id="email" name="email" value={form.email} onChange={handleChange} />
-        <label htmlFor="email">email</label>
+        <label htmlFor="email">Email</label>
       </div>
       <div className={(form.password !== '') ? 'input-form active' : 'input-form'}>
         <input type="password" id="password" name="password" value={form.password} onChange={handleChange} />

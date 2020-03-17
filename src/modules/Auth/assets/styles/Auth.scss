@@ -23,6 +23,7 @@
         label {
             position: absolute;
             top: 12px;
+            transition: top 0.2s;
         }
         &.active label {
             top: 0;
@@ -68,5 +69,31 @@
             text-decoration: none;
             color: var(--primary-dark)
         }
+    }
+}
+
+.auth-message {
+    position: absolute;
+    top: 16px;
+    right: 50px;
+    width: 250px;
+    border-radius: 5px;
+    padding: 16px;
+    color: white;
+    background-color: green;
+    text-transform: uppercase;
+    transition: right 0.2s;
+    animation: output 0.5s;
+    &.error {
+        background-color: red;
+    }
+}
+
+@keyframes output {
+    0% {
+        right: -250px;
+    }
+    100% {
+        right: 50px;
     }
 }

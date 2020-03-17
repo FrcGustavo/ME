@@ -5,7 +5,7 @@ import Main from '../modules/Main';
 import Auth from '../modules/Auth/Auth';
 import Admin from '../modules/Admin/Admin';
 
-import { hasUser } from '../utils/firebase';
+//import { hasUser } from '../utils/firebase';
 
 import '../assets/styles/app.scss';
 

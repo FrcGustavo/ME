@@ -5,19 +5,23 @@ import { firebaseConfig } from '../config';
 
 firebase.initializeApp(firebaseConfig);
 
-export const createUser = (email, password, name) => {
-  return firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((result) => {
-      result.user.updateProfile({
-        displayName: name,
-      });
-      const config = {
-        url: 'http://localhost:8080/auth/login',
-      };
-      result.user.sendEmailVerification(config);
-      firebase.auth().signOut();
-      return 'HOLA';
+export const createUser = async (email, password, name) => {
+  try {
+    let result;
+    result = await firebase.auth().createUserWithEmailAndPassword(email, password);
+    result = await result.user.updateProfile({
+      displayName: name,
     });
+    const config = {
+      url: 'http://localhost:8080/auth/login',
+    };
+    result = await result.user.sendEmailVerification(config);
+    firebase.auth().signOut();
+    return 'Se registro exitosamente, por favor verifique su correo';
+  } catch (error) {
+    firebase.auth().signOut();
+    return error;
+  }
 };
 
 export const loginUser = (email, password) => {
@@ -40,4 +44,3 @@ export const hasUser = (callback) => {
   return firebase.auth().onAuthStateChanged(callback);
 
 };
-
