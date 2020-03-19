@@ -2,11 +2,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import { loginUser } from '../../../actions/firebase';
-
 const Login = () => {
   const [form, setForm] = useState({
-    name: '',
     email: '',
     password: '',
   });
@@ -14,13 +11,6 @@ const Login = () => {
   function handleSubmit(e) {
     e.preventDefault();
     console.log(form);
-    loginUser(form.email, form.password)
-      .then((res) => {
-        window.location.href = '/admin';
-      })
-      .catch((error) => {
-        console.log(error);
-      });
   }
 
   function handleChange(e) {
@@ -37,7 +27,7 @@ const Login = () => {
       </div>
       <div className={(form.email !== '') ? 'input-form active' : 'input-form'}>
         <input type="email" id="email" name="email" value={form.email} onChange={handleChange} />
-        <label htmlFor="email">email</label>
+        <label htmlFor="email">Correo</label>
       </div>
       <div className={(form.password !== '') ? 'input-form active' : 'input-form'}>
         <input type="password" id="password" name="password" value={form.password} onChange={handleChange} />
