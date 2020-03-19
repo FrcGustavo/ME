@@ -1,33 +1,3 @@
-.header {
-    background: linear-gradient(90deg, #1C2237, #4B5A8A);
-    height: 50px;
-    .main {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .logo {
-        color: var(--white);
-        text-decoration: none;
-        font-size: 18px;
-    }
-
-    .header-nav {
-        a {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 5px;
-            background-color: rgba(0, 0, 0, 0.1);
-            color: var(--white);
-            &:first-child {
-                margin-right: 1rem;
-            }
-        }
-    }
-}
-
 .footer {
     display: flex;
     justify-content: center;
