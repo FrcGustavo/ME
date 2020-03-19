@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 import '../assets/styles/components/Layout.scss';
 
@@ -10,9 +11,7 @@ const Layout = ({ children }) => (
     <main>
       {children}
     </main>
-    <footer className="footer">
-      Todos los derechos reservados
-    </footer>
+    <Footer />
   </>
 );
 
