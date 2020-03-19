@@ -4,7 +4,7 @@ const Message = (props) => {
   return (
     <div className={`auth-message ${props.type}`}>
       <p>
-        {props.children}
+        {/*props.children ? props.children : false*/}
       </p>
     </div>
   );

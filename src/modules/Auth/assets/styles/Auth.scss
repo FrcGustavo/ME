@@ -89,6 +89,44 @@
     }
 }
 
+#modal .modal {
+    position: absolute;
+    top: 16px;
+    right: 50px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 250px;
+    border-radius: 5px;
+    padding: 16px;
+    color: white;
+    background-color: green;
+    transition: right 0.2s;
+    animation: output 0.5s;
+    .modal-header,
+    .modal-container {
+        grid-column: 6 / 7;
+        grid-row: 1 / 2;
+    }
+    .modal-container {
+        grid-column: 1 / 6;
+        display: flex;
+        align-items: center;
+    }
+    .modal-button {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25px;
+        height: 25px;
+        &.modal-button__close {
+            i {
+                color: white;
+            }
+        }
+    }
+}
+
 @keyframes output {
     0% {
         right: -250px;

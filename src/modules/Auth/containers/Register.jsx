@@ -1,10 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 
 import { createUser } from '../../../actions/firebase';
-import Message from './Message';
+import Modal from './Modal';
 
 const Register = () => {
   const [form, setForm] = useState({
@@ -12,19 +11,31 @@ const Register = () => {
     email: '',
     password: '',
   });
+  const [message, setMessage] = useState(false);
+  const [modal, setModal] = useState(false);
 
-  const [message, setMessage] = useState(null);
-  async function handleSubmit(e) {
-    e.preventDefault();
-    try {
-      const result = await createUser(form.email, form.password);
-      setMessage(result);
-      console.log(result);
-
-    } catch (error) {
-      setMessage(error.message);
-      console.log('Error', message);
+  const toggleModal = () => {
+    console.log('Message into modal', message);
+    if (message) {
+      setModal(!modal);
+    } else {
+      setModal(false);
     }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    createUser(form.email, form.password, form.name)
+      .then((result) => {
+        setMessage(result);
+        setModal(true);
+        //toggleModal();
+      })
+      .catch((error) => {
+        setMessage(error.message);
+        //toggleModal();
+        setModal(true);
+      });
   };
 
   function handleChange(e) {
@@ -39,12 +50,6 @@ const Register = () => {
       <div className="form-title">
         <h1>Resgistrate</h1>
       </div>
-      {
-        message ? ReactDOM.createPortal(
-          (<Message type="error">{message}</Message>),
-          document.getElementById('message-bar'),
-        ) : false
-      }
       <div className={(form.name !== '') ? 'input-form active' : 'input-form'}>
         <input type="text" id="name" name="name" value={form.name} onChange={handleChange} />
         <label htmlFor="name">Nombre</label>
@@ -61,6 +66,7 @@ const Register = () => {
         <input type="submit" value="Registrar" />
         <Link to="/auth/login">Iniciar Sessión</Link>
       </div>
+      <Modal isOpen={modal} onToggleModal={toggleModal} message={message} />
     </form>
   );
 };
