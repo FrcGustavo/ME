@@ -1,5 +1,5 @@
 import React from 'react';
-import CardSkill from '../components/CardSkill';
+import CardProject from '../components/CardProject';
 import IAm from '../assets/img/Iam.jpg';
 import '../assets/styles/containers/Home.scss';
 
@@ -19,28 +19,38 @@ const skills = [
 ];
 
 const Home = () => {
-  const showSkills = () => {
-    return skills.map((skill, idx) => (
-      // eslint-disable-next-line react/no-array-index-key
-      <CardSkill key={idx} skill={skill} />
-    ));
-  };
-
   return (
     <div className="home">
-      <div className="main">
-        <div className="profile">
-          <div className="profile-img">
-            <img src={IAm} alt="FrcGustavo" />
+      <div className="profile">
+        <div className="main">
+          <div className="profile-cover">
+            <img src={IAm} alt="Yo soy" />
           </div>
-          <h1 className="profile-name">Francisco Gustavo</h1>
-          <h2 className="profile-title">JavaScript Developer</h2>
-          <p className="profile-descripton">
-            Llevo dos años aprendiendo y apenas un año ejerciendo en proyectos personales todo lo aprendido, me gusta el desarrollo con JavaScript ya que concidero es mi fuerte, pero de igual forma me gusta experimentar, y constantemente aprendo cosas nuevas.
-          </p>
+          <div className="profile-container">
+            <div className="profile-name">
+              <h1>Francisco Gustavo</h1>
+            </div>
+            <div className="profile-profession">
+              <h2>Dessarrollador JavaScript | Frontend | Backend</h2>
+            </div>
+            <div className="profile-description">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, et? Saepe, delectus? Aspernatur sapiente aliquam iste cupiditate quaerat nesciunt illum sunt fugit? Eveniet perferendis repellendus vitae debitis suscipit ipsam asperiores.
+              </p>
+            </div>
+            <div className="profile-socialmedia">
+              <a href="#">Twitter</a>
+              <a href="#">GitHub</a>
+              <a href="#">Linkedin</a>
+            </div>
+          </div>
         </div>
-        <div className="skills">
-          {showSkills()}
+      </div>
+      <div className="projects">
+        <div className="main">
+          <CardProject />
+          <CardProject />
+          <CardProject />
         </div>
       </div>
     </div>

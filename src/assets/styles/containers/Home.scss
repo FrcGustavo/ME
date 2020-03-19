@@ -1,38 +1,65 @@
 .home {
-    background: linear-gradient(90deg, #1C2237, #4B5A8A);
-    min-height: calc(100vh - 50px);
-    padding: 2rem 0;
+    .profile {
+        background: linear-gradient(90deg, #1C2237, #4B5A8A);
+        padding: 168px 0;
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 900px;
+        }
+        .profile-container {
+            max-width: 500px;
+            margin: auto;
+        }
+        .profile-cover {
+            border-radius: 50%;
+            max-width: 150px;
+            max-height: 150px;
+            overflow: hidden;
+            img {
+                width: 100%;
+            }
+        }
+        .profile-name h1 {
+            font-size: 28px;
+        }
+        .profile-profession h2 {
+            font-size: 20px;
+            font-weight: normal;
+        }
+        .profile-description p {
+            font-size: 14px;
+            font-weight: normal;
+        }
+        .profile-name h1,
+        .profile-profession h2,
+        .profile-description p {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+    }
 }
 
-.profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 600px;
-    margin: auto;
-    margin-bottom: 6rem;
-    margin-top: 2rem;
-    .profile-img img {
-        border-radius: 50%;
-        max-width: 150px;
-        max-height: 150px;
+.home .projects {
+    .project-card {
+        margin-top: -90px;
+        margin-bottom: 180px;
     }
+}
 
-    .profile-name, .profile-title, .profile-descripton {
-        text-align: center;
-        font-size: 24px;
-        color: var(--white);
-        margin-bottom: 1rem;
-    }
-
-    .profile-title {
-        font-size: 20px;
-        font-weight: normal;
-    }
-
-    .profile-descripton {
-        font-size: 14px;
-        font-weight: normal;
+@media screen and (min-width: 600px) {
+    .home {
+        .profile {
+            .main {
+                justify-content: flex-start;
+            }
+            .profile-container {
+                margin: unset;
+                width: calc(100% - 200px);
+                margin-left: 50px;
+            }
+        }
     }
 }
 
@@ -40,7 +67,6 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
     .skill {
         width: 100%;
         max-width: 275px;
@@ -50,14 +76,12 @@
         margin-bottom: 1.5rem;
         background-color: var(--white);
         box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-        
         .skill__title {
             font-size: 16px;
             margin-bottom: 10px;
             color: var(--black);
             opacity: 0.9;
         }
-
         .skill__loader {
             display: flex;
             align-items: center;
@@ -65,7 +89,6 @@
             padding-left: 10px;
             background: aqua;
         }
-    
     }
 }
 
@@ -75,8 +98,6 @@
         flex-direction: row;
         justify-content: flex-end;
         align-items: flex-start;
-
-
         .profile-img {
             position: relative;
             display: inline-block;
@@ -86,13 +107,14 @@
                 margin-left: 0;
             }
         }
-        .profile-name, .profile-title, .profile-descripton {
+        .profile-name,
+        .profile-title,
+        .profile-descripton {
             text-align: left;
             display: inline-block;
             width: calc(100% - 170px);
         }
     }
-
     .skills {
         .skill {
             margin: unset;
