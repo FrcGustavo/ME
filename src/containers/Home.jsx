@@ -1,6 +1,12 @@
 import React from 'react';
+
 import CardProject from '../components/CardProject';
+
 import IAm from '../assets/img/Iam.jpg';
+import githubIcon from '../assets/img/github.svg';
+import twitterIcon from '../assets/img/twitter.svg';
+import linkedinIcon from '../assets/img/linkedin.svg';
+
 import '../assets/styles/containers/Home.scss';
 
 const skills = [
@@ -39,9 +45,15 @@ const Home = () => {
               </p>
             </div>
             <div className="profile-socialmedia">
-              <a href="#">Twitter</a>
-              <a href="#">GitHub</a>
-              <a href="#">Linkedin</a>
+              <a href="https://github.com/FranciscoGustavo" target="_blanck">
+                <img src={githubIcon} alt="Github" />
+              </a>
+              <a href="https://twitter.com/FrcGustavo" target="_blanck">
+                <img src={twitterIcon} alt="Twitter" />
+              </a>
+              <a href="https://www.linkedin.com/in/frcgustavo/" target="_blanck">
+                <img src={linkedinIcon} alt="Linkedin" />
+              </a>
             </div>
           </div>
         </div>

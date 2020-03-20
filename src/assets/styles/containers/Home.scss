@@ -38,6 +38,14 @@
             color: var(--white);
             margin-bottom: 1rem;
         }
+        .profile-socialmedia {
+            a {
+                margin-right: 14px;
+                img {
+                    width: 25px;
+                }
+            }
+        }
     }
 }
 
