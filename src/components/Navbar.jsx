@@ -9,8 +9,7 @@ const Navbar = () => (
       <Link to="/" className="logo">FrcGustavo</Link>
       <nav className="header-nav">
         <Link to="/">Home</Link>
-        <Link to="/proyectos">Proyectos</Link>
-        <Link to="/contacto">Contacto</Link>
+        <Link to="/proyectos">Blog</Link>
       </nav>
     </div>
   </header>

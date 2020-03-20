@@ -1,15 +1,20 @@
 .home {
+    width: 100%;
+    height: calc(100vh - 50px);
+    background: linear-gradient(90deg, #1C2237, #4B5A8A);
+    .main {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        align-items: center;
+        max-width: 900px;
+        height: 100%;
+    }
     .profile {
-        background: linear-gradient(90deg, #1C2237, #4B5A8A);
-        padding: 168px 0;
-        .main {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            max-width: 900px;
-        }
+        grid-row: 3 span;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         .profile-container {
-            max-width: 500px;
             margin: auto;
         }
         .profile-cover {
@@ -49,10 +54,57 @@
     }
 }
 
-.home .projects {
-    .project-card {
-        margin-top: -90px;
-        margin-bottom: 180px;
+.home .main {
+    .post-card {
+        margin-bottom: 10px;
+    }
+}
+
+.post-card {
+    display: flex;
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    border-radius: 5px;
+    padding: 42px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    .post-container {
+        width: calc(100% - 175px);
+        margin-left: 25px;
+    }
+    .post-cover {
+        width: 150px;
+        height: 150px;
+        img {
+            width: 100%;
+        }
+    }
+    .post-title {
+        margin-bottom: 1.5rem;
+        h3 {
+            font-size: 21px;
+        }
+    }
+    .post-description {
+        margin-bottom: 2rem;
+    }
+    .post-actions {
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: var(--primary-dark);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1.25px;
+            padding: 10px 12px;
+            border-radius: 5px;
+            margin-right: 21px;
+            &:first-child {
+                color: white;
+                background-color: var(--secondary-dark);
+            }
+        }
     }
 }
 
@@ -99,36 +151,3 @@
         }
     }
 }
-
-
-/*
-@media screen and (min-width: 680px) {
-    .profile {
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: flex-start;
-        .profile-img {
-            position: relative;
-            display: inline-block;
-            width: 170px;
-            img {
-                position: absolute;
-                margin-left: 0;
-            }
-        }
-        .profile-name,
-        .profile-title,
-        .profile-descripton {
-            text-align: left;
-            display: inline-block;
-            width: calc(100% - 170px);
-        }
-    }
-    .skills {
-        .skill {
-            margin: unset;
-            margin-bottom: 1.5rem;
-        }
-    }
-}*/

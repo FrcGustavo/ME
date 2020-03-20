@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CardProject from '../components/CardProject';
+import cover from '../assets/img/nextparty.png';
 
 import IAm from '../assets/img/Iam.jpg';
 import githubIcon from '../assets/img/github.svg';
@@ -9,26 +9,11 @@ import linkedinIcon from '../assets/img/linkedin.svg';
 
 import '../assets/styles/containers/Home.scss';
 
-const skills = [
-  { title: 'JavaScript', level: 'Intermedio - Avanzado', color: '#F0D91D' },
-  { title: 'TypeScript', level: 'Basico', color: '#0077C6' },
-  { title: 'PHP', level: 'Basico', color: '#7478AE' },
-  { title: 'MongoDB', level: 'Basico', color: '#4C9545' },
-  { title: 'SQL', level: 'Basico', color: '#F8AD02' },
-  { title: 'HTML', level: 'Basico', color: '#F8AD02' },
-  { title: 'CSS', level: 'Basico', color: '#F8AD02' },
-  { title: 'GIT', level: 'Basico', color: '#F8AD02' },
-  { title: 'SQL', level: 'Basico', color: '#F8AD02' },
-  { title: 'React', level: 'Basico', color: '#F8AD02' },
-  { title: 'Angular', level: 'Basico', color: '#F8AD02' },
-  { title: 'Express', level: 'Basico', color: '#F8AD02' },
-];
-
 const Home = () => {
   return (
     <div className="home">
-      <div className="profile">
-        <div className="main">
+      <div className="main">
+        <div className="profile">
           <div className="profile-cover">
             <img src={IAm} alt="Yo soy" />
           </div>
@@ -57,12 +42,23 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="projects">
-        <div className="main">
-          <CardProject />
-          <CardProject />
-          <CardProject />
+        <div className="post">
+          <div className="post-card">
+            <div className="post-cover">
+              <img src={cover} alt="" />
+            </div>
+            <div className="post-container">
+              <div className="post-title">
+                <h3>Titulo post</h3>
+              </div>
+              <div className="post-description">
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem praesentium fuga excepturi odit accusamus nisi nam et nihil officiis atque modi porro ad voluptatibus architecto.</p>
+              </div>
+              <div className="post-actions">
+                <a href="/" target="_blank">Leer</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
