@@ -1,0 +1,34 @@
+.footer {
+    padding: 90px 0;
+    background: linear-gradient(90deg, #1C2237, #4B5A8A);
+    .main {
+        max-width: 900px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        .footer-contact,
+        .footer-socialmedia,
+        .footer-blog {
+            color: white;
+            h3 {
+                border-bottom: solid 1px white;
+                padding-bottom: 8px;
+                margin-bottom: 21px;
+                font-size: 21px;
+            }
+        }
+        .footer-contact {
+            p {
+                margin-bottom: 14px;
+            }
+        }
+        .footer-socialmedia {
+            a {
+                margin-right: 14px;
+                img {
+                    width: 25px;
+                }
+            }
+        }
+    }
+}
