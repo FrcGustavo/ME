@@ -7,18 +7,9 @@ import linkedinIcon from '../assets/img/linkedin.svg';
 import '../assets/styles/components/Footer.scss';
 
 const Footer = (props) => {
-  const [pathname, setPathname] = useState(window.location.pathname);
-  console.log(props);
-  if (pathname === '/') {
-    return null;
-  }
   return (
     <footer className="footer">
-      <div className="main">
-        <div className="footer-contact">
-          <h3>Contacto</h3>
-          <p>hidalgofco520@gmail.com</p>
-        </div>
+      <div className="main">  
         <div className="footer-socialmedia">
           <h3>Redes Sociales</h3>
           <a href="https://github.com/FranciscoGustavo" target="_blanck">
@@ -33,6 +24,12 @@ const Footer = (props) => {
         </div>
         <div className="footer-blog">
           <h3>Blog</h3>
+        </div>
+        <div className="footer-subscribe">
+          <div className="subscribe">
+            <input type="email" id="subscribe" placeholder="Escribe tu correo" />
+            <label htmlFor="subscribe">Suscribete</label>
+          </div>
         </div>
       </div>
     </footer>

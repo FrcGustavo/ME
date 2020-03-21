@@ -6,7 +6,6 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 40px;
-        .footer-contact,
         .footer-socialmedia,
         .footer-blog {
             color: white;
@@ -17,16 +16,41 @@
                 font-size: 21px;
             }
         }
-        .footer-contact {
-            p {
-                margin-bottom: 14px;
-            }
-        }
         .footer-socialmedia {
             a {
                 margin-right: 14px;
                 img {
                     width: 25px;
+                }
+            }
+        }
+        .footer-subscribe {
+            grid-column: 3 / 5;
+            display: grid;
+            .subscribe {
+                display: grid;
+                grid-template-columns: 1fr 150px;
+                grid-template-rows: auto;
+                label,
+                input {
+                    height: 50px;
+                    padding: 14px;
+                }
+                label {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 0 5px 5px 0;
+                    font-size: 12px;
+                    font-weight: bold;
+                    letter-spacing: 1.25px;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    background-color: var(--secondary-dark);
+                    color: white;
+                }
+                input {
+                    border-radius: 5px 0 0 5px;
                 }
             }
         }

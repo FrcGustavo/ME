@@ -1,7 +1,7 @@
 .blog {
     .main-post {
         padding: 84px 0;
-        background-color: rgba(#000000, 0.05);
+        background-color: rgba(#000000, 0.1);
         .main {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -30,6 +30,7 @@
                     padding: 10px 12px;
                     border-radius: 5px;
                     margin-right: 21px;
+                    cursor: pointer;
                 }
             }
         }
