@@ -1,0 +1,35 @@
+.card-post {
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(#000000, 0.3);
+    overflow: hidden;
+    padding-bottom: 14px;
+    img {
+        width: 100%;
+    }
+    h2 {
+        font-size: 21px;
+        margin-bottom: 10px;
+    }
+    p {
+        margin-bottom: 16px;
+    }
+    h2,
+    p,
+    .btn-post {
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+    .btn-post {
+        display: inline-block;
+        border-radius: 5px;
+        padding: 10px 12px;
+        margin-right: 21px;
+        font-size: 12px;
+        font-weight: bold;
+        letter-spacing: 1.25px;
+        text-decoration: none;
+        text-transform: uppercase;
+        background-color: var(--secondary-dark);
+        color: white;
+    }
+}

@@ -1,4 +1,6 @@
 import React from 'react';
+
+import CardPost from '../components/CardPost';
 import Footer from '../components/Footer';
 
 import cover from '../assets/img/main-post.png';
@@ -6,6 +8,13 @@ import cover from '../assets/img/main-post.png';
 import '../assets/styles/containers/Blog.scss';
 
 const Blog = () => {
+  const post = {
+    cover,
+    title: 'Este es el titulo',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ut a fugiat soluta consequatur nisi sunt.',
+    link: '/',
+  };
+
   return (
     <>
       <div className="blog">
@@ -27,32 +36,15 @@ const Blog = () => {
         </div>
         <div className="main">
           <div className="posts">
-            <article className="post-card">
-              <img src={cover} alt="" />
-              <h2>Título del blog post</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ut a fugiat soluta consequatur nisi sunt.</p>
-              <a href="/" className="btn-post">Leer más</a>
-            </article>
-            <article className="post-card">
-              <img src={cover} alt="" />
-              <h2>Título del blog post</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ut a fugiat soluta consequatur nisi sunt.</p>
-              <a href="/" className="btn-post">Leer más</a>
-            </article>
-            <article className="post-card">
-              <img src={cover} alt="" />
-              <h2>Título del blog post</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ut a fugiat soluta consequatur nisi sunt.</p>
-              <a href="/" className="btn-post">Leer más</a>
-            </article>
-            <div>Hola</div>
-            <div>Hola</div>
-            <div>Hola</div>
-            <div>Hola</div>
-            <div>Hola</div>
-            <div>Hola</div>
-            <div>Hola</div>
-            <div>Hola</div>
+            <CardPost post={post} />
+            <CardPost post={post} />
+            <CardPost post={post} />
+            <CardPost post={post} />
+            <CardPost post={post} />
+            <CardPost post={post} />
+            <CardPost post={post} />
+            <CardPost post={post} />
+            <CardPost post={post} />
           </div>
         </div>
       </div>

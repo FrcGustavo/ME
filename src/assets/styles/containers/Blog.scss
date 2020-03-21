@@ -38,32 +38,6 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 50px;
-        padding: 56px 0;
-    }
-}
-
-.post-card {
-    img {
-        width: 100%;
-    }
-    h2 {
-        font-size: 21px;
-        margin-bottom: 14px;
-    }
-    p {
-        margin-bottom: 14px;
-    }
-    .btn-post {
-        display: inline-block;
-        border-radius: 5px;
-        padding: 10px 12px;
-        margin-right: 21px;
-        font-size: 12px;
-        font-weight: bold;
-        letter-spacing: 1.25px;
-        text-decoration: none;
-        text-transform: uppercase;
-        background-color: var(--secondary-dark);
-        color: white;
+        padding: 84px 0;
     }
 }
