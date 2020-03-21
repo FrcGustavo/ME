@@ -1,6 +1,6 @@
 .blog {
     .main-post {
-        padding: 56px;
+        padding: 84px 0;
         background-color: rgba(#000000, 0.05);
         .main {
             display: grid;
@@ -38,6 +38,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 50px;
+        padding: 56px 0;
     }
 }
 
